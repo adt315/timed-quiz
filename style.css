@@ -1,0 +1,16 @@
+
+.btn {
+    width: 100px; 
+    height: 50px; 
+    background-color: rgb(61, 16, 121);
+    font-weight: 700; 
+    padding: 5px; 
+    opacity: 1; 
+    transition: 0.3s;
+}
+
+
+.btn:hover {
+    opacity: 0.6;
+    background-color: rgb(61, 16, 121);
+}
