@@ -9,36 +9,47 @@
     <link rel="stylesheet" href="style.css"/>
   </head>
 
-  <body>
+<body>
 
+<header>
+  <nav class="navbar">
+    <a href="high-scores.html">View High Scores</a>
+    <h6 class="timer">Time: </h6>
+  </nav>
+</header>
+
+<div class="card">
+  <div class="card-body">
+    
 <div style='transform: scale(0.65); position: relative;'>
-    <h3>How many states are smaller than Connecticut in area?</h3>
+    <h3>How many states are smaller than Connecticut in total area?</h3>
     <hr />
   
     <div id='block-11' style='padding: 10px;'>
       <label for='option-11' style=' padding: 5px; font-size: 2.5rem;'>
-        <button class="btn btn-dark btn-lg rounded-pill">0</button>
+        <button class="btn btn-dark btn-lg rounded-pill wrong">0</button>
     </div>
     <hr />
   
     <div id='block-12' style='padding: 10px;'>
       <label for='option-12' style=' padding: 5px; font-size: 2.5rem;'>
-        <button class="btn btn-dark btn-lg rounded-pill">1</button>
+        <button class="btn btn-dark btn-lg rounded-pill wrong">1</button>
     </div>
     <hr />
   
     <div id='block-13' style='padding: 10px;'>
       <label for='option-13' style=' padding: 5px; font-size: 2.5rem;'>
-        <button class="btn btn-dark btn-lg rounded-pill">2</button>
+        <button class="btn btn-dark btn-lg rounded-pill correct">2</button>
     </div>
     <hr />
   
     <div id='block-14' style='padding: 10px;'>
       <label for='option-14' style=' padding: 5px; font-size: 2.5rem;'>
-        <button class="btn btn-dark btn-lg rounded-pill">3</button>
+        <button class="btn btn-dark btn-lg rounded-pill wrong">3</button>
     </div>
     <hr />
-    
+  </div>
+</div>
 
 <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
