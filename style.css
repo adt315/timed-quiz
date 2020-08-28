@@ -61,3 +61,19 @@ h2 {
     font-size: 1.5rem;
     font-weight: bold;
 }
+
+.start, .finish, .h2-high-scores {
+    text-align: center;
+}
+
+.float-left {
+    float: left;
+    margin-left: 150px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.float-right {
+    float: right;
+    margin-right: 150px;
+}
