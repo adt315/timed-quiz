@@ -11,9 +11,9 @@
 
 a {
     color: white;
-    text-decoration: none;
-    margin-left: 30px;
     font-weight: bold;
+    margin-left: 30px;
+    text-decoration: none;  
 }
 
 a:hover {
@@ -22,26 +22,27 @@ a:hover {
 
 .timer {
     color: white;
-    text-align: right;
-    margin-top: 10px;
-    margin-right: 100px;
     font-weight: bold;
+    margin-right: 100px;
+    margin-top: 10px;
+    text-align: right;
 }
 
 .btn {
     background-color: rgb(61, 16, 121); 
-    opacity: 1; 
-    transition: 0.3s;
     border-radius: 12px;
+    font-weight: bold;
+    opacity: 1; 
     padding-left: 30px;
     padding-right: 30px;
-    font-weight: bold;
+    transition: 0.3s;
 }
 
 
 .btn:hover {
-    opacity: 0.6;
     background-color: rgb(61, 16, 121);
+    opacity: 0.6;
+    
 }
 
 .card {
