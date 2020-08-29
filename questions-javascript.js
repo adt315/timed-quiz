@@ -27,5 +27,7 @@ var questions = [
     } ,
 ]
 
+console.log(questions);
+
 
 

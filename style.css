@@ -20,7 +20,7 @@ a:hover {
     color: white;
 }
 
-.timer {
+#time {
     color: white;
     font-weight: bold;
     margin-right: 100px;
@@ -62,7 +62,7 @@ h2 {
     font-weight: bold;
 }
 
-.start, .finish, .h2-high-scores {
+#start-card, #finish-card, #h2-high-scores {
     text-align: center;
 }
 
@@ -76,4 +76,12 @@ h2 {
 .float-right {
     float: right;
     margin-right: 150px;
+}
+
+h6 {
+    line-height: 1.5;
+}
+
+.btn-start {
+    margin-top: 25px;
 }

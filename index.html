@@ -7,124 +7,140 @@
     <title>Timed Quiz</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css"/>
-  </head>
+</head>
 
 <body>
 
-<!-- Navbar -->
-<header>
-  <nav class="navbar">
-    <a href="high-scores.html">View High Scores</a>
-    <h1 class="timer">Time: </h1>
-  </nav>
-</header>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <a href="high-scores.html">View High Scores</a>
+      <h1 id="time"></h1>
+      <!-- <div id="main"></div> -->
+    </nav>
+  </header>
 
-<div id="questions">
-  <h3 id="question-title"></h3>
-  <div id="choices" class="choices"></div>
+  <!-- <div id="questions">
+    <h3 id="question-title"></h3>
+    <div id="choices" class="choices"></div>
+  </div> -->
+
+  
+  <!-- Start -->
+  <div id="start-card" class="card">
+    <div class="card-body">
+      <h2>Connecticut Quiz
+      </h2>
+      <hr>
+      <h6>Try to answer the following questions about the state of Connecticut within the time limit.  Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</h6>
+      <div><button class="btn btn-dark btn-md">Start Quiz</button></div>
+      <hr>
+    </div>
+  </div>
+  
+  
+  <!-- Question 1 -->
+  <div id="question1-card" class="card">
+    <div class="card-body">
+      <div id="question"><h2>How many states are smaller than Connecticut in total area?</h2></div>
+      <hr>
+      <div id="choices">
+        <div><button id="A" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('A')">0</button></div>
+        <hr>
+        <div><button id="B" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('B')">1</button></div>
+        <hr>
+        <div><button id="C" class="choice btn btn-dark btn-md correct" onclick="checkAnswer('C')">2</button></div>
+        <hr>
+        <div><button id="D" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('D')">3</button></div>
+      </div>
+    </div>
+  </div>
+  
+
+   <!-- Question 2 -->
+  <div id="question2-card" class="card">
+    <div class="card-body">
+      <div id="question"><h2>What is the state bird of Connecticut?</h2></div>
+      <hr>
+      <div id="choices">
+      <div><button class="btn btn-dark btn-md correct">American Robin</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md wrong">Hermit Thrush</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md wrong">Black-Capped Chickadee</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md wrong">Purple Finch</button></div>
+    </div>
+  </div> 
 </div>
+  
 
+  <!-- Question 3 -->
+  <div id="question3-card" class="card">
+     <div class="card-body">
+      <div id="question"><h2>What is the state song of Connecticut?</h2></div>
+      <hr>
+      <div id="choices">
+      <div><button class="btn btn-dark btn-md wrong">"Home On The Range"</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md wrong">"These Green Mountains"</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md wrong">"You Are My Sunshine"</button></div>
+      <hr>
+      <div><button class="btn btn-dark btn-md correct">"Yankee Doodle"</button></div>
+    </div>
+  </div> 
+</div>
+  
 
-<!-- Start -->
-<div class="card start">
-  <div class="card-body">
-    <h2>Connecticut Quiz
-    </h2>
-    <hr>
-    <h6>Try to answer the following questions about the state of Connecticut within the time limit.  Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</h6>
-    <div><button class="btn btn-dark btn-md">Start Quiz</button></div>
-    <hr>
+  <!-- Question 4 -->
+  <div id="question4-card" class="card">
+    <div class="card-body">
+      <div id="question"><h2>What is the capital of Connecticut?</h2></div>
+     <hr>
+     <div id="choices">
+     <div><button class="btn btn-dark btn-md wrong">Bridgeport</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md correct">Hartford</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md wrong">Springfield</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md wrong">New Haven</button></div>
+   </div>
   </div>
 </div>
+  
 
-
-
-
-
-<!-- Question 1 -->
-<div class="card question1">
-  <div class="card-body">
-    <h2>How many states are smaller than Connecticut in total area?</h2>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">0</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">1</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md correct">2</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">3</button></div>
+  <!-- Question 5 -->
+  <div id="question5-card" class="card">
+    <div class="card-body">
+      <div id="question"><h2>Connecticut was admitted as the _______ state.</h2></div>
+     <hr>
+     <div id="choices">
+     <div><button class="btn btn-dark btn-md wrong">second</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md wrong">third</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md wrong">fourth</button></div>
+     <hr>
+     <div><button class="btn btn-dark btn-md correct">fifth</button></div>
+   </div>
   </div>
 </div>
+  
 
- <!-- Question 2 -->
-<div class="card question2">
-  <div class="card-body">
-    <h2>What is the state bird of Connecticut?</h2>
-    <hr>
-    <div><button class="btn btn-dark btn-md correct">American Robin</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">Hermit Thrush</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">Black-Capped Chickadee</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">Purple Finch</button></div>
+  <!-- Finish -->
+  <div id="finish-card" class="card">
+    <div class="card-body">
+      <h2>All done!</h2>
+      <hr>
+      <h5>Your final score is</h5>
+      <h5>Enter your initials</h5>
+      <div><button class="btn btn-dark btn-md wrong">Submit</button></div>
+      <hr>
+    </div>
   </div>
-</div> 
 
-<!-- Question 3 -->
-<div class="card question3">
-   <div class="card-body">
-   <h2>What is the state song of Connecticut?</h2>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">"Home On The Range"</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">"These Green Mountains"</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md wrong">"You Are My Sunshine"</button></div>
-    <hr>
-    <div><button class="btn btn-dark btn-md correct">"Yankee Doodle"</button></div>
-  </div>
-</div> 
-
-<!-- Question 4 -->
-<div class="card question4">
-  <div class="card-body">
-  <h2>What is the capital of Connecticut?</h2>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">Bridgeport</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md correct">Hartford</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">Springfield</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">New Haven</button></div>
- </div>
-</div>
-
-<!-- Question 5 -->
-<div class="card question5">
-  <div class="card-body">
-  <h2>Connecticut was admitted as the _______ state.</h2>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">second</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">third</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md wrong">fourth</button></div>
-   <hr>
-   <div><button class="btn btn-dark btn-md correct">fifth</button></div>
- </div>
-</div>
-
-<!-- Finish -->
-<div class="card finish">
-  <div class="card-body">
-    <h2>All done!</h2>
-    <hr>
-    <h5>Your final score is</h5>
-    <h5>Enter your initials</h5>
-    <div><button class="btn btn-dark btn-md wrong">Submit</button></div>
-</div>
 
 <!-- Scripts --> 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
