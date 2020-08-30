@@ -16,6 +16,10 @@ var highScores= document.getElementById("high-scores-list");
 var timeElement = document.getElementById("time");
 // var = document.getElementById("");
 
+
+// var highScores = [];
+
+
 var quizQuestions = [ 
     {
         question : "How many states are smaller than Connecticut in total area?",
@@ -62,6 +66,7 @@ var quizQuestions = [
 
 // console.log(quizQuestions);
 
+
 var secondsLeft = 76;
 
 
@@ -87,16 +92,57 @@ function startQuiz () {
 
 }
 
+// answerBtn.addEventListener("click", getQuestion);
+
+function answerCheck (answer) {
+    if (quizQuestions[runningQuestionIndex].correct == answer){
+        correctAnswer();
+    } else {
+        wrongAnswer();
+    }
+
+    if (runningQuestionIndex < lastQuestionIndex) {
+        runningQuestionIndex++;
+        getQuestion();
+    } else {
+        clearInterval(timerInterval);
+        endQuiz();
+    }
+}
+
+// each button is a class called choice, we'll grab the value attribute to see if value = ..... check that with currentQuestion.answer
+// answerButton.addEventListener("click", answerCheck);
+
+function correctAnswer () {
+    // document.getElementById(runningQuestion).style.backgroundColor = "green";
+    document.getElementByClass("result").innerHTML = "Correct!";
+}
+
+function wrongAnswer () {
+    // document.getElementById(runningQuestion).style.backgroundColor = "red";
+    document.getElementByClass("result").innerHTML = "Wrong!";
+    secondsLeft-10;
+}
 
 
+
+    // function endQuiz () {
+    //     //show end quiz card
+    //     // style.display="block";
+    //     // won't be called until run out of questions or run out of time
+    //     }
+        
+
+
+// Don't think I need.../////////////////////////////////////////////////////////////////////////////////////////////////
 
 // var lastQuestionIndex = quizQuestions.length-1;
 // var runningQuestionIndex = 0;
 
-
 // function getQuestion () {
-//     startCard.style.display="none";  
-//     question1.style.display="block";
+    //question1.style.display="block";
+      
+    
 
 //     let q = quizQuestions[runningQuestionIndex];
 //     question.innerHTML = "<p>" + q.question + "</P>";
@@ -106,72 +152,18 @@ function startQuiz () {
 //     choiceD.innerHTML = q.choiceD; 
 // }
 
+// getQuestion ();
+
 // runningQuestionIndex = 0;
 // getQuestion ()
 
 // runningQuestionIndex++
 // getQuestion ()
 
-// answerBtn.addEventListener("click", getQuestion);
 
 
-// function correctAnswer () {
-    
-    
-// }
 
-// function wrongAnswer () {
-   
-    
-// }
-
-    // for(var i = 0; i < quizQuestions.length; i++) {
+ // for(var i = 0; i < quizQuestions.length; i++) {
     //     var currentQuestion = quizQuestions [i];
     //     currentQuestion.style.display="block";
     // }
-
-
-
-
-// function answerCheck (answer) {
-//     if (quizQuestions[runningQuestionIndex].correct == answer){
-//         document.getElementByClass("result").innerHTML = "Correct!";
-//     } else {
-//         document.getElementByClass("result").innerHTML = "Wrong!";
-//         secondsLeft-10;
-//     }
-
-//     if (runningQuestionIndex < lastQuestionIndex) {
-//         runningQuestionIndex++;
-//         getQuestion();
-//     } else {
-//         clearInterval(timerInterval);
-//         quizEnd ();
-//     }
-
-    // function quizEnd () {
-        // won't be called until run out of questions or run out of time
-        // }
-        
-        // var questionsElement = document.getElementById("questions");
-        // var choicesElement = document.getElementById("choices");
-
-// each button is a class called choices, we'll grab the value attribute to see if value = ..... check that with currentQuestion.answer
-//     }
-
-// answerButton.addEventListener("click", answerCheck);
-
-// var highScores = [];
-
-
-
-
-
- 
-
-
-
-
-// document.getElement
- 
-    
