@@ -14,7 +14,7 @@ var choiceD = document.getElementsByClassName("D-answer-btn");
 var result = document.getElementsByClassName("result")
 var highScores= document.querySelector("#high-scores-list");
 var timeElement = document.querySelector("#time");
-
+var scoreElement = document.querySelector("#score");
 
 var secondsLeft = 76;
 var timerInterval;
@@ -37,8 +37,8 @@ function quizTimer() {
 
     if (secondsLeft <= 0 || (questionNumber == 5)) {
       clearInterval(timerInterval);
-      secondsLeft = 0;
-      // quizEnd();
+    //   secondsLeft = 
+      endQuiz();
     }
   }
   
@@ -114,4 +114,9 @@ function choiceDResult () {
         correctAnswer();
     }
     delay1000();
+}
+
+
+function endQuiz () {
+    scoreElement.textContent = "Your final score is " + secondsLeft;
 }
