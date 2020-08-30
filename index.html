@@ -16,23 +16,16 @@
     <nav class="navbar">
       <a href="high-scores.html">View High Scores</a>
       <h1 id="time"></h1>
-      <!-- <div id="main"></div> -->
     </nav>
   </header>
-
-  <!-- <div id="questions">
-    <h3 id="question-title"></h3>
-    <div id="choices" class="choices"></div>
-  </div> -->
-
   
   <!-- Start -->
   <div id="start-card" class="card">
     <div class="card-body">
-      <h2>Connecticut Quiz
-      </h2>
+      <h2>Connecticut Quiz</h2>
       <hr>
-      <h6>Try to answer the following questions about the state of Connecticut within the time limit.  Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</h6>
+      <h6>Try to answer the following questions about the state of Connecticut within the time limit.</h6>
+      <h6>Keep in mind that incorrect answers will penalize your score/time by 10 seconds.</h6>
       <div><button id="start-button" class="btn btn-dark btn-md">Start Quiz</button></div>
       <hr>
     </div>
@@ -47,12 +40,15 @@
       <div id="choices">
         <div><button id="A answer-btn" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('A')">0</button></div>
         <hr>
-        <div><button id="B answer-btn" class="choice  btn btn-dark btn-md wrong" onclick="checkAnswer('B')">1</button></div>
+        <div><button id="B answer-btn" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('B')">1</button></div>
         <hr>
         <div><button id="C answer-btn" class="choice btn btn-dark btn-md correct" onclick="checkAnswer('C')">2</button></div>
         <hr>
         <div><button id="D answer-btn" class="choice btn btn-dark btn-md wrong" onclick="checkAnswer('D')">3</button></div>
+        <hr>
+        <div class="result"></div>
       </div>
+
     </div>
   </div>
   
@@ -70,6 +66,8 @@
       <div><button class="btn btn-dark btn-md wrong">Black-Capped Chickadee</button></div>
       <hr>
       <div><button class="btn btn-dark btn-md wrong">Purple Finch</button></div>
+      <hr>
+      <div class="result"></div>
     </div>
   </div> 
 </div>
@@ -88,6 +86,8 @@
       <div><button class="btn btn-dark btn-md wrong">"You Are My Sunshine"</button></div>
       <hr>
       <div><button class="btn btn-dark btn-md correct">"Yankee Doodle"</button></div>
+      <hr>
+      <div class="result"></div>
     </div>
   </div> 
 </div>
@@ -106,6 +106,8 @@
      <div><button class="btn btn-dark btn-md wrong">Springfield</button></div>
      <hr>
      <div><button class="btn btn-dark btn-md wrong">New Haven</button></div>
+     <hr>
+     <div class="result"></div>
    </div>
   </div>
 </div>
@@ -124,22 +126,27 @@
      <div><button class="btn btn-dark btn-md wrong">fourth</button></div>
      <hr>
      <div><button class="btn btn-dark btn-md correct">fifth</button></div>
+     <hr>
+     <div class="result"></div>
    </div>
   </div>
 </div>
   
 
   <!-- Finish -->
-  <div id="finish-card" class="card" style="display: none;">
+  <div id="finish-card" class="card" style="display: none;"> 
     <div class="card-body">
       <h2>All done!</h2>
       <hr>
       <h5>Your final score is</h5>
-      <h5>Enter your initials</h5>
-      <div><button class="btn btn-dark btn-md wrong">Submit</button></div>
+      <div class="form-group">
+        <label><h5>Enter your initials:</h5></label>
+        <input type="text">
+    </div>
+      <div><button class="btn btn-dark btn-md">Submit</button></div>
       <hr>
     </div>
-  </div>
+  </div> 
 
 
 <!-- Scripts --> 

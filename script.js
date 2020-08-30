@@ -1,18 +1,19 @@
 
-
 var start = document.getElementById("start-button");
-var startCard = document.getElementById("start-card")
+var startCard = document.getElementById("start-card");
+var question = document.getElementById("question");
 var question1 = document.getElementById("question1-card");
 var question2 = document.getElementById("question2-card");
 var question3 = document.getElementById("question3-card");
 var question4 = document.getElementById("question4-card");
 var question5 = document.getElementById("question5-card");
 var choiceA = document.getElementById("A");
-var answerButton = document.getElementById("answer-button");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD= document.getElementById("D");
-// var = document.getElementById("");
+var answerButton = document.getElementById("answer-button");
+var highScores= document.getElementById("high-scores-list");
+var timeElement = document.getElementById("time");
 // var = document.getElementById("");
 
 var quizQuestions = [ 
@@ -62,7 +63,7 @@ var quizQuestions = [
 // console.log(quizQuestions);
 
 var secondsLeft = 76;
-var timeElement = document.getElementById("time");
+
 
 start.addEventListener("click", startQuiz);
 
@@ -74,72 +75,101 @@ function startQuiz () {
       
           if(secondsLeft === 0) {
             clearInterval(timerInterval);
+            // quizEnd();
           //   alert("Time's Up!");
           }
         }, 1000);
       }
       setTime();
+      startCard.style.display="none";
+      question1.style.display="block";
+    //   getQuestion();
 
-    startCard.style.display="none";  
-    question1.style.display="block";
-    // start card shows at beginning
-    //  gets first question
-    }
+}
 
-answerBtn.addEventListener("click", answerCheck); 
 
+
+
+// var lastQuestionIndex = quizQuestions.length-1;
+// var runningQuestionIndex = 0;
+
+
+// function getQuestion () {
+//     startCard.style.display="none";  
+//     question1.style.display="block";
+
+//     let q = quizQuestions[runningQuestionIndex];
+//     question.innerHTML = "<p>" + q.question + "</P>";
+//     choiceA.innerHTML = q.choiceA;
+//     choiceB.innerHTML = q.choiceB;
+//     choiceC.innerHTML = q.choiceC;
+//     choiceD.innerHTML = q.choiceD; 
+// }
+
+// runningQuestionIndex = 0;
+// getQuestion ()
+
+// runningQuestionIndex++
+// getQuestion ()
+
+// answerBtn.addEventListener("click", getQuestion);
+
+
+// function correctAnswer () {
+    
+    
+// }
+
+// function wrongAnswer () {
+   
+    
+// }
+
+    // for(var i = 0; i < quizQuestions.length; i++) {
+    //     var currentQuestion = quizQuestions [i];
+    //     currentQuestion.style.display="block";
+    // }
+
+
+
+
+// function answerCheck (answer) {
+//     if (quizQuestions[runningQuestionIndex].correct == answer){
+//         document.getElementByClass("result").innerHTML = "Correct!";
+//     } else {
+//         document.getElementByClass("result").innerHTML = "Wrong!";
+//         secondsLeft-10;
+//     }
+
+//     if (runningQuestionIndex < lastQuestionIndex) {
+//         runningQuestionIndex++;
+//         getQuestion();
+//     } else {
+//         clearInterval(timerInterval);
+//         quizEnd ();
+//     }
+
+    // function quizEnd () {
+        // won't be called until run out of questions or run out of time
+        // }
+        
+        // var questionsElement = document.getElementById("questions");
+        // var choicesElement = document.getElementById("choices");
+
+// each button is a class called choices, we'll grab the value attribute to see if value = ..... check that with currentQuestion.answer
+//     }
+
+// answerButton.addEventListener("click", answerCheck);
 
 // var highScores = [];
 
 
-// function answerIsCorrect
-// // vid
-// function answerIsWrong
-// // vid
-
-
-
-function answerCheck (correctAnswer) {
-    // checks if answer is right or wrong
-    // each button is a class called choices, we'll grab the value attribute to see if value = ..... check that with currentQuestion.answer
-    }
-
-function getQuestions () {
-    // will begin once timer starts, show hidden questions one by one, possibly for loop
-}
-
-
-
-function quizEnd () {
-// won't be called until run out of questions or run out of time
-}
-
-// var questionsElement = document.getElementById("questions");
-// var choicesElement = document.getElementById("choices");
-
-
-// for(var i=0; i<questions.length; i++) {
-//   var currentQuestion = questions [i];
-//   console.log(currentQuestion);
-//   var titleElement = document.getElementById("question-title");
-//   titleElement.textContent = currentQuestion.title;
-//   questionsElement.append(titleElement);
-// }
 
 
 
  
 
-// function answerCheck() {
-// // Decrease time if wrong answer
-//     if (document.querySelector(".correct").onclick) {
-//     document.querySelector(".correct").style.background-color ="green";
-//     document.getElementByClass("result").innerHTML = "Correct!";
-//     score++;
-//   } else {
-//     ("Wrong!");
-//   }
-//  }
+
 
 
 // document.getElement
