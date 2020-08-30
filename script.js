@@ -12,64 +12,17 @@ var choiceA = document.querySelector(".A-answer-btn");
 var choiceB = document.querySelector(".B-answer-btn");
 var choiceC = document.querySelector(".C-answer-btn");
 var choiceD = document.querySelector(".D-answer-btn");
+var result = document.querySelector(".result")
 var highScores= document.querySelector("#high-scores-list");
 var timeElement = document.querySelector("#time");
-
-
-// var highScores = [];
-
-
-var quizQuestions = [ 
-    {
-        question : "How many states are smaller than Connecticut in total area?",
-        choiceA : "0",
-        choiceB : "1",
-        choiceC : "2",
-        choiceD : "3",
-        correctAnswer: "C",
-    } , 
-    {
-        question : "What is the state bird of Connecticut?",
-        choiceA : "American Robin",
-        choiceB : "Hermit Thrush",
-        choiceC : "Black-Capped Chickadee",
-        choiceD : "Purple Finch",
-        correctAnswer: "A",
-    } ,
-    {
-        question : "What is the state song of Connecticut?",
-        choices: ["", "", "", ""],
-        choiceA : "Home On The Range",
-        choiceB : "These Green Mountains",
-        choiceC : "You Are My Sunshine",
-        choiceD : "Yankee Doodle",
-        correctAnswer: "D",
-    } ,
-    {
-        question : "What is the capital of Connecticut?",
-        choiceA : "Bridgeport",
-        choiceB : "Hartford",
-        choiceC : "Springfield",
-        choiceD : "New Haven",
-        correctAnswer: "B",
-    } ,
-    {
-        question : "Connecticut was admitted as the _______ state.",
-        choiceA : "second",
-        choiceB : "third",
-        choiceC : "fourth",
-        choiceD : "fifth",
-        correctAnswer: "D",
-    } ,
-]
-
-// console.log(quizQuestions);
 
 
 var secondsLeft = 76;
 var timerInterval;
 var quizQuestions = [question1, question2, question3, question4, question5];
 var questionNumber = 0;
+var highScores = [];
+
 
 start.addEventListener("click", startQuiz);
 
@@ -77,7 +30,6 @@ function startQuiz () {
       timerInterval = setInterval(quizTimer, 1000);
       startCard.style.display="none";
       question1.style.display="block";
-    //   getQuestion();
 }
 
 function quizTimer() {
@@ -87,7 +39,6 @@ function quizTimer() {
     if (secondsLeft === 0) {
       clearInterval(timerInterval);
       // quizEnd();
-    //   alert("Time's Up!");
     }
   }
 
@@ -97,72 +48,73 @@ function quizTimer() {
   choiceD.addEventListener("click", choiceDResult);
   
 function choiceAResult () {
-    quizQuestions[questionNumber].style.display="none";
-    quizQuestions[questionNumber + 1].style.display="block";
-    questionNumber++;
+    // quizQuestions[questionNumber].style.display="none";
+    // quizQuestions[questionNumber + 1].style.display="block";
+    // questionNumber++;
     if (choiceA.classList.contains("wrong")) {
         secondsLeft -= 10;
+        document.querySelector(".result").innerHTML = "Wrong!";
+        document.querySelector(".result").style.color = "red";
+        document.querySelector(".result").style.fontWeight = "bold";
+        document.querySelector(".result").style.fontSize = "20px";
     }
 }
 
 function choiceBResult () {
-    quizQuestions[questionNumber].style.display="none";
-    quizQuestions[questionNumber + 1].style.display="block";
-    questionNumber++;
+    // quizQuestions[questionNumber].style.display="none";
+    // quizQuestions[questionNumber + 1].style.display="block";
+    // questionNumber++;
     if (choiceB.classList.contains("wrong")) {
         secondsLeft -= 10;
+        document.querySelector(".result").innerHTML = "Wrong!";
+        document.querySelector(".result").style.color = "red";
+        document.querySelector(".result").style.fontWeight = "bold";
+        document.querySelector(".result").style.fontSize = "20px";
     }
 }
 
 function choiceCResult () {
-    quizQuestions[questionNumber].style.display="none";
-    quizQuestions[questionNumber + 1].style.display="block";
-    questionNumber++;
+    // quizQuestions[questionNumber].style.display="none";
+    // quizQuestions[questionNumber + 1].style.display="block";
+    // questionNumber++;
     if (choiceC.classList.contains("wrong")) {
         secondsLeft -= 10;
+        document.querySelector(".result").innerHTML = "Wrong!";
+        document.querySelector(".result").style.color = "red";
+        document.querySelector(".result").style.fontWeight = "bold";
+        document.querySelector(".result").style.fontSize = "20px";
+    } else {
+        document.querySelector(".result").innerHTML = "Correct!";
+        document.querySelector(".result").style.color = "#32CD32";
+        document.querySelector(".result").style.fontWeight = "bold";
+        document.querySelector(".result").style.fontSize = "20px";
     }
 }
 
 function choiceDResult () {
-    quizQuestions[questionNumber].style.display="none";
-    quizQuestions[questionNumber + 1].style.display="block";
-    questionNumber++;
+    // quizQuestions[questionNumber].style.display="none";
+    // quizQuestions[questionNumber + 1].style.display="block";
+    // questionNumber++;
     if (choiceD.classList.contains("wrong")) {
         secondsLeft -= 10;
+        document.querySelector(".result").innerHTML = "Wrong!";
+        document.querySelector(".result").style.color = "red";
+        document.querySelector(".result").style.fontWeight = "bold";
+        document.querySelector(".result").style.fontSize = "20px";
     }
 }
 
-// answerButton.addEventListener("click", getQuestion);
 
-function answerCheck (answer) {
-    if (quizQuestions[runningQuestionIndex].correct == answer){
-        correctAnswer();
-    } else {
-        wrongAnswer();
-    }
+// function correctAnswer () {
+//     // document.getElementById(runningQuestion).style.backgroundColor = "green";
+//     document.getElementByClass("result").innerHTML = "Correct!";
+// }
 
-    if (runningQuestionIndex < lastQuestionIndex) {
-        runningQuestionIndex++;
-        getQuestion();
-    } else {
-        clearInterval(timerInterval);
-        endQuiz();
-    }
-}
-
-// each button is a class called choice, we'll grab the value attribute to see if value = ..... check that with currentQuestion.answer
-answerButton.addEventListener("click", answerCheck);
-
-function correctAnswer () {
-    // document.getElementById(runningQuestion).style.backgroundColor = "green";
-    document.getElementByClass("result").innerHTML = "Correct!";
-}
-
-function wrongAnswer () {
-    // document.getElementById(runningQuestion).style.backgroundColor = "red";
-    document.getElementByClass("result").innerHTML = "Wrong!";
-    secondsLeft-10;
-}
+// function wrongAnswer () {
+//     // document.getElementById(runningQuestion).style.backgroundColor = "red";
+//     document.getElementByClass("result").innerHTML = "Wrong!";
+//     secondsLeft-10;
+// }
 
 
 
@@ -181,3 +133,50 @@ function wrongAnswer () {
     //     var currentQuestion = quizQuestions [i];
     //     currentQuestion.style.display="block";
     // }
+
+
+    // var quizQuestions = [ 
+//     {
+//         question : "How many states are smaller than Connecticut in total area?",
+//         choiceA : "0",
+//         choiceB : "1",
+//         choiceC : "2",
+//         choiceD : "3",
+//         correctAnswer: "C",
+//     } , 
+//     {
+//         question : "What is the state bird of Connecticut?",
+//         choiceA : "American Robin",
+//         choiceB : "Hermit Thrush",
+//         choiceC : "Black-Capped Chickadee",
+//         choiceD : "Purple Finch",
+//         correctAnswer: "A",
+//     } ,
+//     {
+//         question : "What is the state song of Connecticut?",
+//         choices: ["", "", "", ""],
+//         choiceA : "Home On The Range",
+//         choiceB : "These Green Mountains",
+//         choiceC : "You Are My Sunshine",
+//         choiceD : "Yankee Doodle",
+//         correctAnswer: "D",
+//     } ,
+//     {
+//         question : "What is the capital of Connecticut?",
+//         choiceA : "Bridgeport",
+//         choiceB : "Hartford",
+//         choiceC : "Springfield",
+//         choiceD : "New Haven",
+//         correctAnswer: "B",
+//     } ,
+//     {
+//         question : "Connecticut was admitted as the _______ state.",
+//         choiceA : "second",
+//         choiceB : "third",
+//         choiceC : "fourth",
+//         choiceD : "fifth",
+//         correctAnswer: "D",
+//     } ,
+// ]
+
+// console.log(quizQuestions);
