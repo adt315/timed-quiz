@@ -184,7 +184,6 @@ function choiceDResult () {
     delay1000();
 }
 
-
 function endQuiz () {
     scoreElement.textContent = "Your final score is " + secondsLeft;
 }

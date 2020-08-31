@@ -38,11 +38,9 @@ a:hover {
     transition: 0.3s;
 }
 
-
 .btn:hover {
     background-color: rgb(61, 16, 121);
-    opacity: 0.6;
-    
+    opacity: 0.6;  
 }
 
 .card {
@@ -62,20 +60,8 @@ h2 {
     font-weight: bold;
 }
 
-#start-card, #finish-card, #h2-high-scores {
+#start-card, #finish-card, #high-scores-card {
     text-align: center;
-}
-
-.float-left {
-    float: left;
-    margin-left: 150px;
-    padding-left: 50px;
-    padding-right: 50px;
-}
-
-.float-right {
-    float: right;
-    margin-right: 150px;
 }
 
 h6 {
@@ -86,3 +72,7 @@ h6 {
     margin-top: 30px;
 }
 
+.scores {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
