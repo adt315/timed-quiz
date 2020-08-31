@@ -27,6 +27,45 @@ var myScore = {
 };
 var highScores = [];
 
+//////////////
+
+/* localStorage.clear();
+
+// Retrieve
+document.getElementById("result").innerHTML = localStorage.getItem("lastname");
+
+// The array to store
+var array = [1, 2, 3];
+// Store after JSON stringifying (is this a verb?) it
+localStorage.setItem('myArray', JSON.stringify(array));
+
+// Get an array from local storage
+
+// Retrieve the array from local storage
+var array = localStorage.getItem('myArray');
+// Parse it to something usable in js
+array = JSON.parse(array); */
+
+//************
+// // Get the existing data
+// var existing = localStorage.getItem('myFavoriteSandwich');
+
+// // If no existing data, use the value by itself
+// // Otherwise, add the new value to it
+// var data = existing ? existing + ' and tuna' : 'tuna';
+
+// // Save back to localStorage
+// localStorage.setItem('myFavoriteSandwich', data);
+
+// var points = [40, 100, 1, 5, 25, 10];
+
+// points.sort(function(a, b){return a - b});
+// document.getElementById("demo").innerHTML = points;
+
+//************
+
+////////////////
+
 if (startCard) {
     start.addEventListener("click", startQuiz);
 }

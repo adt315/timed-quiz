@@ -1,24 +1,17 @@
 ## Timed Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+The goal of this project was to build a timed quiz with multiple-choice questions. 
+JavaScript, Bootstrap, CSS, and HTML were used.
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
+### How it works:
+- When you click the start button a timer starts and you are presented with a multiple-choice question
+- After you click on an answer choice button it will say if your answer is right or wrong
+- If your guess is wrong, 10 seconds will be subtracted from your time
+- Then you will be presented with another question
+- When all questions are answered or the timer reaches 0 the game is over
+- When the game is over your score will be shown, which is equal to the time left on the clock
+- You can save you initials and score to the list of High Scores 
 
 https://adt315.github.io/timed-quiz/
+
+![Quiz Screenshot](/screenshot.png)
