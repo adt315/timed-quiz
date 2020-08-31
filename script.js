@@ -27,13 +27,16 @@ var myScore = {
 };
 var highScores = [];
 
-start.addEventListener("click", startQuiz);
+if (startCard) {
+    start.addEventListener("click", startQuiz);
+}
 
 function startQuiz () {
-      timerInterval = setInterval(quizTimer, 1000);
-      setChoiceButtons();
-      startCard.style.display="none";
-      question1.style.display="block";
+    start.removeEventListener("click", startQuiz);
+    timerInterval = setInterval(quizTimer, 1000);
+    setChoiceButtons();
+    startCard.style.display = "none";
+    question1.style.display = "block";
 }
 
 function quizTimer() {
@@ -74,6 +77,7 @@ function setSubmitButton() {
 }
 
 function storeScore () {
+    submitBtn.removeEventListener("click", storeScore);
     myScore.initials = initsField.value;
     myScore.personalScore = secondsLeft;
     highScores.push(myScore);
