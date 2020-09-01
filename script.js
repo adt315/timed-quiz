@@ -1,4 +1,3 @@
-
 var start = document.querySelector("#start-button");
 var startCard = document.querySelector("#start-card");
 var question1 = document.querySelector("#question1-card");
@@ -7,15 +6,18 @@ var question3 = document.querySelector("#question3-card");
 var question4 = document.querySelector("#question4-card");
 var question5 = document.querySelector("#question5-card");
 var finishCard = document.querySelector("#finish-card");
+var highScoresCard = document.querySelector("#high-scores-card");
 var choiceA = document.getElementsByClassName("A-answer-btn");
 var choiceB = document.getElementsByClassName("B-answer-btn");
 var choiceC = document.getElementsByClassName("C-answer-btn");
 var choiceD = document.getElementsByClassName("D-answer-btn");
 var submitBtn = document.querySelector("#submit-btn");
+var clearHighScoresBtn = document.querySelector("#clear-high-scores-btn");
 var result = document.getElementsByClassName("result")
 var timeElement = document.querySelector("#time");
 var scoreElement = document.querySelector("#score");
 var initsField = document.getElementById("initial-field");
+var scoreList = document.getElementById("score-list");
 
 var secondsLeft = 76;
 var timerInterval;
@@ -25,46 +27,12 @@ var myScore = {
     initials: "initials",
     personalScore: "personalScore"
 };
-var highScores = [];
+var highScores;
 
-//////////////
-
-/* localStorage.clear();
-
-// Retrieve
-document.getElementById("result").innerHTML = localStorage.getItem("lastname");
-
-// The array to store
-var array = [1, 2, 3];
-// Store after JSON stringifying (is this a verb?) it
-localStorage.setItem('myArray', JSON.stringify(array));
-
-// Get an array from local storage
-
-// Retrieve the array from local storage
-var array = localStorage.getItem('myArray');
-// Parse it to something usable in js
-array = JSON.parse(array); */
-
-//************
-// // Get the existing data
-// var existing = localStorage.getItem('myFavoriteSandwich');
-
-// // If no existing data, use the value by itself
-// // Otherwise, add the new value to it
-// var data = existing ? existing + ' and tuna' : 'tuna';
-
-// // Save back to localStorage
-// localStorage.setItem('myFavoriteSandwich', data);
-
-// var points = [40, 100, 1, 5, 25, 10];
-
-// points.sort(function(a, b){return a - b});
-// document.getElementById("demo").innerHTML = points;
-
-//************
-
-////////////////
+if (highScoresCard) {
+    getHighScores();
+    clearHighScoresBtn.addEventListener("click", clearHighScores);
+}
 
 if (startCard) {
     start.addEventListener("click", startQuiz);
@@ -119,9 +87,10 @@ function storeScore () {
     submitBtn.removeEventListener("click", storeScore);
     myScore.initials = initsField.value;
     myScore.personalScore = secondsLeft;
-    highScores.push(myScore);
-    
-    console.log(highScores);
+
+    localStorage.setItem(initsField.value, JSON.stringify(myScore));
+
+    console.log(myScore);
 }
 
 function wrongAnswer() {
@@ -186,4 +155,24 @@ function choiceDResult () {
 
 function endQuiz () {
     scoreElement.textContent = "Your final score is " + secondsLeft;
+}
+
+function getHighScores () {
+    scoreList.innerHTML = "";
+    for (i = 0; i < localStorage.length; i++) {
+        highScores = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
+        console.log(highScores);
+
+        var li = document.createElement("li");
+        li.textContent = Object.values(highScores);
+        li.setAttribute("data-index", i);
+        scoreList.appendChild(li);
+    }
+}
+
+function clearHighScores () {
+    localStorage.clear();
+    getHighScores();
+    clearHighScoresBtn.removeEventListener("click", clearHighScores);
 }
