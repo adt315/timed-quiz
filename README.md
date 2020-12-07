@@ -11,7 +11,8 @@ JavaScript, Bootstrap, CSS, and HTML were used.
 - When all questions are answered or the timer reaches 0 the game is over
 - When the game is over your score will be shown, which is equal to the time left on the clock
 - You can save you initials and score to the list of High Scores 
+- Each time you take the quiz you can try and improve your previous score.  Only one score per set of initials is featured on the list of High Scores
 
 https://adt315.github.io/timed-quiz/
 
-![Quiz Screenshot](/screenshot.png)
+![screenshot png](https://user-images.githubusercontent.com/51940058/91794495-2fcb9580-ebe9-11ea-8f6c-b91fe463bb98.png)
