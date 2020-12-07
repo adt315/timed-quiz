@@ -166,7 +166,7 @@ function getHighScores () {
 
         var li = document.createElement("li");
         li.textContent = Object.values(highScores);
-        li.setAttribute("data-index", i);
+
         scoreList.appendChild(li);
     }
 }
